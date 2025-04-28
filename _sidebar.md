@@ -1,12 +1,11 @@
 
 * [备战面试](./docs/a-1备战面试.md)
   
-* Java
+* Go
 
-  * [Java基础](./docs/b-1面试题总结-Java基础.md)
-  * [Java集合](./docs/b-2Java集合.md)
-  * [Java多线程](./docs/b-3Java多线程.md)
-  * [jvm](./docs/b-4jvm.md)
+  * [Go基础](./docs/b-Go基础.md)
+  * [Go协程](./docs/b-Go协程.md)
+  * [Go垃圾回收](./docs/b-Go垃圾回收.md)
 
 * 计算机基础
 
