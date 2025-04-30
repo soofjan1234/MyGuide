@@ -3,9 +3,9 @@
   
 * Go
 
-  * [Go基础](./docs/b-Go基础.md)
-  * [Go协程](./docs/b-Go协程.md)
-  * [Go垃圾回收](./docs/b-Go垃圾回收.md)
+  * [Go基础](./docs/b-1Go基础.md)
+  * [Go协程](./docs/b-2Go协程.md)
+  * [Go垃圾回收](./docs/b-3Go垃圾回收.md)
 
 * 计算机基础
 
