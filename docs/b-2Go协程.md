@@ -95,6 +95,9 @@
 
 6. **超时控制**  
 - 定时任务，通过 `select` 语句，可以在多个 `channel` 中选择操作。  
+    1. 使用time.ticker
+    2. for select case<-ticker.C
+    3. time.AfterFunc适合一次性延迟任务
 
 7. **任务取消**  
 - 在并发程序中，某些任务可能需要在特定条件下取消。可以通过 `channel` 来传递取消信号  
