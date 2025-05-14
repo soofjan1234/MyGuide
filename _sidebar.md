@@ -14,8 +14,8 @@
   * [MongoDB](./docs/c-3MongoDB.md)
 
 * 中间件
-  * [Kafka](./docs/d-1Kafka.md)
-  * [NSQ](./docs/d-2NSQ.md)
+  * [NSQ](./docs/d-1NSQ.md)
+  * [Kafka](./docs/d-2Kafka.md)
 
 * 项目
   * [总体](./docs/e-1总体.md)

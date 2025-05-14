@@ -3,25 +3,15 @@
 # Kafka
 
 > 作者：hou
+------
+## 1.1 Kafka 核心概念
 
-## 1.1 Kafka 是什么
-
-Kafka 是一个分布式流式处理平台，基于 Scala 和 Java 语言开发，设计中大量使用了批量处理和异步的思想，最高可以每秒处理千万级别的消息。
-
-## 1.2 Kafka 核心概念
-
-1. **Producer**  
-- 生产者，负责将消息发送到 Kafka 集群  
-
+1. **Producer**   
 2. **Consumer**  
-- 消费者，负责从 Kafka 集群中消费消息  
-
 3. **Broker**  
 - 可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster  
 
-4. **Topic**  
-- Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息  
-
+4. **Topic** 
 5. **Partition**  
 - Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition。并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上  
 

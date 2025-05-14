@@ -3,7 +3,7 @@
 # Go基础
 
 > 作者：hou
-
+------
 ## 1.1 Go
 ### 1.1.1 Go语言的优点
 
@@ -23,7 +23,9 @@ Go语言编译后的二进制文件不依赖外部库，体积小，便于部署
 
 1. **语言性**: Go简单；Java语言较为复杂，包含更多特性  
 
-2. **类型系统**：Go支持类型推断，不支持继承，使用组合来实现代码复用；Java支持继承和多态  
+2. **类型系统**：
+    - Go支持类型推断，
+    - Go不支持继承，使用组合来实现代码复用，更加灵活，松耦合；Java支持继承和多态  
 
 3. **并发**：Go使用goroutines和channels实现并发；Java基于Thread和Runnable实现并发  
 
@@ -120,5 +122,9 @@ Go的map是基于哈希表实现的，多个goroutine同时修改哈希表的结
 3. 原子操作
 4. sync.map
 5. waitGroup
+   WaitGroup 提供了三个基本操作：
+    Add：设置要等待的 goroutine 数量。
+    Done：通知 WaitGroup 一个任务已经完成。
+    Wait：阻塞直到所有的 goroutine 完成
 6. channel
 
