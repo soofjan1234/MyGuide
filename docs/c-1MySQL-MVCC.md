@@ -3,7 +3,7 @@
 # MVCC
 
 > 作者：hou
-
+------
 # 1.1 什么是MVCC
 
 MVCC（Multi-Version Concurrency Control）是一种并发控制机制，用于在数据库管理系统中管理多个事务的并发访问。它通过为每个事务分配一个唯一的版本号（Snapshot），来实现对数据的并发读取和写入，从而避免了锁的开销。
