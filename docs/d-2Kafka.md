@@ -4,7 +4,19 @@
 
 > 作者：hou
 ------
-## 1.1 Kafka 核心概念
+## 1.1 kafka、rabbitmq、rocketmq的区别
+
+- 消息模型：kafka、rocketMQ 采用的是发布/订阅模型，以pull为主；rabbitMQ 采用的是工作队列模型，push为主。
+- 吞吐量：kafka>rocketMQ>rabbitMQ
+- 消息顺序处理：kafka分区内有序；rocketMQ原生支持；rabbitMQ需要自定义插件
+- 运维难度：kafka需要zookeeper或kraft集群；rocketMQ适中；rabbitMQ简单
+
+总结建议
+1. Kafka：偏重于大数据处理、日志采集、高吞吐，偏向“日志系统+消息队列”；
+2. RabbitMQ：偏重于实时性、灵活性、功能丰富（如路由、TTL、死信），适合企业应用业务通信；
+3. RocketMQ：偏重于企业场景、高可靠事务、顺序性需求，特别适合金融、电商类核心业务。
+
+## 1.2 Kafka 核心概念
 
 1. **Producer**   
 2. **Consumer**  
