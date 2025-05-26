@@ -11,7 +11,6 @@
     * [MVCC](./docs/c-1MySQL-MVCC.md)
   * [Redis](./docs/c-2Redis.md)
     * [其它](./docs/c-2Redis-其它.md)
-  * [MongoDB](./docs/c-3MongoDB.md)
 
 * 中间件
   * [NSQ](./docs/d-1NSQ.md)
