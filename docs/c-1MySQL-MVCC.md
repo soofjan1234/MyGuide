@@ -40,10 +40,34 @@ undo log 是一种用于事务回滚的日志，它记录了事务对数据库�
 
 ReadView 是 MVCC 的核心，它用于管理事务的可见性。
 
-- trx_ids: 当前系统中那些活跃(未提交)的读写事务ID, 它数据结构为一个List。(重点注意:这里的trx_ids中的活跃事务，不包括当前事务自己和已提交的事务，这点非常重要)
+### 核心组件
+1. **trx_ids（活跃事务列表）**
+   - 定义：当前事务开始时，系统中未提交的事务ID列表
+   - 作用：记录活跃事务ID，创建者在此列表中则不可见
 
-- low_limit_id: 目前出现过的最大的事务ID+1，即下一个将被分配的事务ID。
+2. **low_limit_id（下限ID）**
+   - 定义：系统下一个将分配的新事务ID(next_trx_id)
+   - 作用：此ID之后的事务都不可见
 
-- up_limit_id: 活跃事务列表trx_ids中最小的事务ID，如果trx_ids为空，则up_limit_id 为 low_limit_id。
+3. **up_limit_id（上限ID）**
+   - 定义：trx_ids中的最小事务ID
+   - 作用：此ID之前提交的事务都可见
 
-- creator_trx_id: 表示生成该 ReadView 的事务的 事务id
+4. **creator_trx_id（创建者事务ID）**
+   - 定义：记录被哪个事务创建的事务ID
+   - 作用：判断记录对当前事务是否可见的关键依据
+
+### 可见性判断规则
+- **自己修改的可见**  
+  `trx_id == creator_trx_id` → 可见
+
+- **已提交的老事务可见**  
+  `trx_id < up_limit_id` → 可见
+
+- **新事务不可见**  
+  `trx_id >= low_limit_id` → 不可见
+
+- **中间状态判断**  
+  `up_limit_id <= trx_id < low_limit_id`时：
+  - 在活跃列表`trx_ids`中 → 说明未提交，不可见
+  - 不在活跃列表中 → 说明已提交，可见
